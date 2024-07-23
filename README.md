@@ -1,17 +1,45 @@
->**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
+
+## **Simple Data Exploration with pandas on Bikeshare Data**
 
 ### Date created
-Include the date you created this project and README file.
+This file was created on  18 July 2024
 
 ### Project Title
-Replace the Project Title
+**Bike Share Project**
 
 ### Description
-Describe what your project is about and what it does
+We have bikeshare data for _Chicago_, _NewYork_ and _Washington_. We will ask the user to enter a year, month and day and based on that we will provide descriptive stastical analysis pertaining to the request. That will look like the following
 
-### Files used
-Include the files used
+* Most popular month
+* Most popular day
+* Most popular hour
+* Most popular start station
+* Most popular end station
+* Most popular combination of start and end stations
+* Total trip duration
+* Average trip duration
+* Types of users by number
+* Types of users by gender (if available)
+* The oldest user (if available)
+* The youngest user (if available)
+* The most common birth year amongst users (if available)
 
-### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+### Requirements
+Language: Python 3.6 or above
+Libraries: pandas, numpy, time
 
+
+### Project Data
+* chicago.csv - Stored in the data folder, the chicago.csv file is the dataset containing all bikeshare information for the city of Chicago provided by Udacity.
+
+* new_york_city.csv - Dataset containing all bikeshare information for the city of New York provided by Udacity.
+
+* washington.csv - Dataset containing all bikeshare information for the city of Washington provided by Udacity. Note: This does not include the 'Gender' or 'Birth Year' data.
+
+### Author
+[**Vinod Anbalagan**](https://github.com/VinodAnbalagan)
+
+### Acknowledgements
+* Udacity's Data Analyst Nanodegree program and their instructors were extremely helpful while I was pursuing this project.
+
+* pandas documentation was immensely helpful in understanding the implemention of pandas methods used in this project.
