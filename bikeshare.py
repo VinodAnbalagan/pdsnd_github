@@ -191,16 +191,37 @@ def user_stats(df):
     None
     """
 def main():
+    """
+    Main function to run the program.
+
+    This function repeatedly asks for user input for city, month, and day,
+    loads the corresponding data, and displays statistics. The program ends
+    when the user enters 'no' to restart.
+    """
+
     while True:
+        # Ask for user input for city, month, and day
         city, month, day = get_filters()
+
+        # Load the corresponding data
         df = load_data(city, month, day)
 
+        # Display time statistics
         time_stats(df)
+
+        # Display station statistics
         station_stats(df)
+
+        # Display trip duration statistics
         trip_duration_stats(df)
+
+        # Display user statistics
         user_stats(df)
 
+        # Ask user if they want to restart
         restart = input('\nWould you like to restart? Enter yes or no.\n')
+
+        # If user enters 'no', exit the loop
         if restart.lower() != 'yes':
             break
 
