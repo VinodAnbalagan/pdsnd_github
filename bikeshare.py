@@ -148,8 +148,17 @@ def trip_duration_stats(df):
     print('-' * 40)
 
 def user_stats(df):
-    """Displays statistics on bikeshare users."""
+    """
+    Displays statistics on bikeshare users.
 
+    This function calculates and displays various statistics about bikeshare users,
+    including the counts of different user types, gender counts, and the earliest,
+    most recent, and most common year of birth.
+
+    Args:
+        df (pandas.DataFrame): The dataframe containing bikeshare data.
+    """
+    # Start the timer
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
@@ -160,6 +169,7 @@ def user_stats(df):
 
     # Display counts of gender
     try:
+        # Display counts of gender
         gender_counts = df['Gender'].value_counts()
         print('Gender Counts:')
         print(gender_counts)
@@ -168,15 +178,19 @@ def user_stats(df):
 
     # Display earliest, most recent, and most common year of birth
     try:
+        # Get earliest, most recent, and most common year of birth
         earliest_birth_year = int(df['Birth Year'].min())
         most_recent_birth_year = int(df['Birth Year'].max())
         most_common_birth_year = int(df['Birth Year'].mode()[0])
+
+        # Display the results
         print('Earliest Birth Year:', earliest_birth_year)
         print('Most Recent Birth Year:', most_recent_birth_year)
         print('Most Common Birth Year:', most_common_birth_year)
     except KeyError:
         print('Birth Year data not available.')
 
+    # Print the time taken and a separator line
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-' * 40)
 
