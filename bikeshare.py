@@ -85,26 +85,37 @@ def load_data(city, month, day):
     return df
 
 def time_stats(df):
-    """Displays statistics on the most frequent times of travel."""
+    """
+    Displays statistics on the most frequent times of travel.
 
+    This function calculates and displays the most common month, day of the week,
+    and start hour of travel. It uses the 'Start Time' column of the dataframe to
+    extract the month, day of the week, and hour, and then finds the mode of each
+    to determine the most common values.
+
+    Args:
+        df (pandas.DataFrame): The dataframe containing bikeshare data.
+    """
+    # Print a message indicating that the program is calculating the most frequent times of travel
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-    # display the most common month
+    # Extract the month from the 'Start Time' column and find the mode
     df['month'] = df['Start Time'].dt.month_name()
     popular_month = df['month'].mode()[0]
     print('The most common month is:', popular_month)
 
-    # display the most common day of week
+    # Extract the day of week from the 'Start Time' column and find the mode
     df['day_of_week'] = df['Start Time'].dt.day_name()
     popular_day = df['day_of_week'].mode()[0]
     print('The most common day of the week is:', popular_day)
 
-    # display the most common start hour
+    # Extract the hour from the 'Start Time' column and find the mode
     df['hour'] = df['Start Time'].dt.hour
     popular_hour = df['hour'].mode()[0]
     print('The most common start hour is:', popular_hour)
 
+    # Print the time taken and a separator line
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-' * 40)
 
