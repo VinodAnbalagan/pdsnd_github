@@ -7,7 +7,7 @@ CITY_DATA = {'chicago': 'chicago.csv',
 
 def get_filters():
     """
-    Asks user to specify a city, month, and day to analyze.
+    Asks user to specify a city, month, and day to get basic data exploration.
 
     Returns:
         (str) city - name of the city to analyze
@@ -175,6 +175,16 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-' * 40)
 
+"""
+    Runs a loop that allows the user to specify a city, month, and day to get basic data exploration.
+    Loads data for the specified city and filters by month and day if applicable.
+    Displays statistics on time, station usage, trip duration, and user statistics.
+    Allows the user to restart the loop or exit.
+    Parameters:
+    None
+    Returns:
+    None
+    """
 def main():
     while True:
         city, month, day = get_filters()
