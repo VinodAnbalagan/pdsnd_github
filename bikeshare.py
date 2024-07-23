@@ -120,24 +120,31 @@ def time_stats(df):
     print('-' * 40)
 
 def station_stats(df):
-    """Displays statistics on the most popular stations and trip."""
+    """
+    Displays statistics on the most popular stations and trip.
 
+    Args:
+        df (pandas.DataFrame): The dataframe containing bikeshare data.
+    """
+
+    # Print message indicating the calculation of the most popular stations and trip
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
-    # display most commonly used start station
+    # Display the most commonly used start station
     popular_start_station = df['Start Station'].mode()[0]
     print('The most commonly used start station is:', popular_start_station)
 
-    # display most commonly used end station
+    # Display the most commonly used end station
     popular_end_station = df['End Station'].mode()[0]
     print('The most commonly used end station is:', popular_end_station)
 
-    # display most frequent combination of start station and end station trip
+    # Display the most frequent combination of start station and end station trip
     df['Start-End Station'] = df['Start Station'] + '-' + df['End Station']
     popular_combination = df['Start-End Station'].mode()[0]
     print('The most frequent combination of start station and end station trip is:', popular_combination)
 
+    # Print the time taken and a separator line
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-' * 40)
 
